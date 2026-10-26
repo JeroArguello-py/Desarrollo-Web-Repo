@@ -43,6 +43,20 @@ body {
   background-color: var(--color-claro);
 }
 
+#root,
+.app {
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__contenido {
+  flex: 1;
+}
+
 /* ---------- Botones (reutilizables en cualquier componente) ---------- */
 .boton {
   display: inline-block;

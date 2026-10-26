@@ -5,8 +5,7 @@ import { Footer } from './components/footer';
 
 function App() {
   return (
-    // Fragmento <> </>: agrupa varios elementos sin agregar un <div> extra
-    <>
+    <div className="app">
       <Header
         nombreSitio="conecta tutor"
         version="2.0"
@@ -16,16 +15,17 @@ function App() {
           { texto: 'Contacto', href: '#contacto' },
         ]}
       />
+      <main className="app__contenido" />
       <Footer
         nombreSitio="conecta tutor"
         version="2.0"
         enlaces={[
-          { texto: 'Inicio', href: '#inicio' },
-          { texto: 'Menú', href: '#menu' },
-          { texto: 'Contacto', href: '#contacto' },
+          { texto: 'Inicio', href: '#gracias' },
+          { texto: 'Menú', href: '#por' },
+          { texto: 'Contacto', href: '#visitarnos' },
         ]}
       />
-    </>
+    </div>
   );
 }
 
