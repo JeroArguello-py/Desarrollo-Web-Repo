@@ -1,6 +1,6 @@
 // capa de rutas: metodo+url -> controlador
 
-const {Router} = require('express');
+const { Router } = require('express');
 
 const controlador = require('../controllers/tareas.controller');
 
@@ -10,8 +10,7 @@ router.get('/', controlador.listar);
 router.get('/:id', controlador.obtener);
 router.post('/', controlador.crear);
 router.put('/:id', controlador.actualizar);
+router.patch('/:id', controlador.actualizar);
 router.delete('/:id', controlador.eliminar);
 
 module.exports = router;
-
-
