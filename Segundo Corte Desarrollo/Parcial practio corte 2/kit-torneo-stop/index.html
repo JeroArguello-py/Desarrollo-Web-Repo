@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NanoStop</title>
+</head>
+<body>
+    <header>
+        <h1>NanoStop</h1>
+        <h2 id="letra-actual">Letra de la ronda: N</h2>
+        <nav aria-label="Navegación de la página">
+            <a href="#tablero">Ir al tablero</a>
+            <a href="#reglas">Ir a las reglas</a>
+        </nav>
+    </header>
+    <main>
+        <section id="tablero" aria-labelledby="titulo-tablero">
+            <h2 id="titulo-tablero">Respuestas de la ronda</h2>
+            <form>
+                <p>
+                    <label for="letra">Letra de la ronda: N</label>
+                    
+                </p>
+                <p>
+                    <label for="ronda">Número de ronda</label>
+                    <input id="ronda" name="ronda" type="number" min="1" max="20" value="1" required>
+                </p>
+                <fieldset>
+                    <legend>Escribe una respuesta para cada categoría</legend>
+                    <p>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Ejemplo: Nicolás" pattern="[Nn][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}" title="Escriba al menos tres letras y empiece por la letra de la ronda." data-respuesta required>
+                    </p>
+                    <p>
+                        <label for="lugar">Lugar</label>
+                        <input id="lugar" name="lugar" type="text" placeholder="Ejemplo: Neiva" pattern="[Nn][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}" title="Escriba al menos tres letras y empiece por la letra de la ronda." data-respuesta required>
+                    </p>
+                    <p>
+                        <label for="animal">Animal</label>
+                        <input id="animal" name="animal" type="text" placeholder="Ejemplo: Nutria" pattern="[Nn][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}" title="Escriba al menos tres letras y empiece por la letra de la ronda." data-respuesta required>
+                    </p>
+                    <p>
+                        <label for="objeto">Objeto</label>
+                        <input id="objeto" name="objeto" type="text" placeholder="Ejemplo: Navaja" pattern="[Nn][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}" title="Escriba al menos tres letras y empiece por la letra de la ronda." data-respuesta required>
+                    </p>
+                    <p>
+                        <label for="marca">Marca</label>
+                        <input id="marca" name="marca" type="text" placeholder="Ejemplo: Nike" pattern="[Nn][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}" title="Escriba al menos tres letras y empiece por la letra de la ronda." data-respuesta required>
+                    </p>
+                    <p>
+                        <label for="comida">Comida</label>
+                        <input id="comida" name="comida" type="text" placeholder="Ejemplo: Nachos" pattern="[Nn][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}" title="Escriba al menos tres letras y empiece por la letra de la ronda." data-respuesta required>
+                    </p>
+                </fieldset>
+                <p>
+                    <img src="recursos/escudo.png" alt="Escudo del torneo NanoStop">
+                </p>
+                <p>
+                    <audio controls src="recursos/timbre.mp3">Su navegador no admite audio.</audio>
+                </p>
+                <button type="submit">¡STOP!</button>
+                <button type="reset">Borrar respuestas</button>
+            </form>
+        </section>
+        <table border="1">
+            <caption>N</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Animal</th>
+                    <th scope="col">Objeto</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Comida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Narciso</td><td>Neiva</td><td>Narval</td><td>Navaja</td><td>Nike</td><td>Naranja</td>
+                </tr>
+                <tr>
+                    <td>Nicole</td><td>Nápoles</td><td>Nutria</td><td>Nevera</td><td>Nissan</td><td>Nachos</td>
+                </tr>
+                <tr>
+                    <td>Nelson</td><td>Noruega</td><td>Ñandú</td><td>Nido</td><td>Nestlé</td><td>Nueces</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <aside id="reglas">
+        <h2>Reglas del torneo</h2>
+        <ol>
+            <li>El parcial es individual. Cada estudiante entrega su propio repositorio.</li>
+            <li>Duración: 120 minutos exactos. El cronómetro es público y no se detiene.</li>
+            <li>La letra del torneo se sortea al minuto cero y es la misma para todo el grupo. Todo el contenido inventado —nombres, respuestas y nombre del torneo— debe empezar por esa letra.</li>
+            <li>Las rondas son secuenciales: lo construido en una es el insumo de la siguiente.</li>
+            <li>Al final de cada ronda, el profesor anuncia <strong>¡STOP!</strong>: todos hacen commit con el formato <code>ronda-NN: descripción</code>. El historial de Git es parte de la evaluación.</li>
+            <li>Se permite consultar documentación oficial: MDN, react.dev, getbootstrap.com y la documentación de TypeScript.</li>
+            <li>No se permiten asistentes de inteligencia artificial, código propio de proyectos anteriores ni plantillas descargadas.</li>
+            <li>Todo se escribe durante el parcial, desde una carpeta vacía. Lo único que se recibe es el kit del torneo.</li>
+            <li>No se evalúan backend, bases de datos ni estado en React. Este parcial cubre HTML, CSS, JavaScript y componentes con props.</li>
+            <li>Cada estudiante tiene dos comodines <strong>PISTA</strong> (el profesor responde una duda puntual; cuesta el 10 % de esa ronda) y un comodín <strong>SALTO</strong> (usa el archivo de rescate del kit para continuar; esa ronda vale 0, pero la cadena no se rompe).</li>
+            <li>Si una ronda no funciona, documente en <code>BITACORA.md</code> qué intentó y qué error obtuvo; eso otorga puntaje parcial.</li>
+            <li>La entrega se hace dentro del tiempo. Lo que llegue después no se evalúa.</li>
+        </ol>
+        <h2>Categorías</h2>
+        <ul>
+            <li>Nombre</li>
+            <li>Lugar</li>
+            <li>Animal</li>
+            <li>Objeto</li>
+            <li>Marca</li>
+            <li>Comida</li>
+        </ul>
+    </aside>
+    <footer>
+        <p>NOMBRE: Jeronimo, Grupo: 1</p>
+    </footer>
+    <script>
+        const selectorLetra = document.querySelector("#letra");
+        const letraActual = document.querySelector("#letra-actual");
+        const respuestas = document.querySelectorAll("[data-respuesta]");
+
+        selectorLetra.addEventListener("change", () => {
+            const letra = selectorLetra.value;
+            letraActual.textContent = `Letra de la ronda: ${letra}`;
+
+            respuestas.forEach((respuesta) => {
+                respuesta.pattern = `[${letra.toUpperCase()}${letra.toLowerCase()}][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}`;
+                respuesta.title = `Escriba al menos tres letras y empiece por ${letra}.`;
+            });
+        });
+    </script>
+</body>
+</html>
