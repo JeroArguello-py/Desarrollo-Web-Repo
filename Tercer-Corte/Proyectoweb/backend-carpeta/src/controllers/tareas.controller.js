@@ -1,28 +1,49 @@
-// capa controladores: traductor HTTP lee req llama el servicio y genera respuesta HTTP
-
+// Capa controladores: traductor HTTP (asíncrono con MongoDB)
 const servicio = require('../services/tareas.service');
 
-function listar(req, res) {
-    res.status(200).json(servicio.listar());
+async function listar(req, res, next) {
+    try {
+        const tareas = await servicio.listar();
+        res.status(200).json(tareas);
+    } catch (error) {
+        next(error);
+    }
 }
 
-function obtener(req, res) {
-    const id = Number(req.params.id);
-    res.status(200).json(servicio.obtener(id));
+async function obtener(req, res, next) {
+    try {
+        const tarea = await servicio.obtener(req.params.id);
+        res.status(200).json(tarea);
+    } catch (error) {
+        next(error);
+    }
 }
 
-function crear(req, res) {
-    const nueva=servicio.crear(req.body.titulo);
-    res.status(201).json(nueva);
+async function crear(req, res, next) {
+    try {
+        const nueva = await servicio.crear(req.body);
+        res.status(201).json(nueva);
+    } catch (error) {
+        next(error);
+    }
 }
 
-function actualizar(req, res) {
-    const id = Number(req.params.id);
-    res.status(200).json(servicio.actualizar(id, req.body));
+async function actualizar(req, res, next) {
+    try {
+        const tareaActualizada = await servicio.actualizar(req.params.id, req.body);
+        res.status(200).json(tareaActualizada);
+    } catch (error) {
+        next(error);
+    }
 }
 
-function eliminar(req, res) {
-    servicio.eliminar(Number(req.params.id));
-    res.status(204).send();
+async function eliminar(req, res, next) {
+    try {
+        await servicio.eliminar(req.params.id);
+        res.status(204).send();
+    } catch (error) {
+        next(error);
+    }
 }
+
 module.exports = { listar, obtener, crear, actualizar, eliminar };

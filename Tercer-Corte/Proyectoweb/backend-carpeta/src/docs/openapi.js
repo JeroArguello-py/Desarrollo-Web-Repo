@@ -22,7 +22,7 @@ module.exports = {
             Tarea: {
                 type: "object",
                 properties: {
-                    id: { type: 'integer', description: "Identificador único de la tarea", example: 1 },
+                    id: { type: 'string', description: "Identificador único de la tarea (MongoDB ObjectId)", example: "6640abc123456789def01234" },
                     titulo: { type: "string", description: "Título de la tarea", minLength: 3, example: "Explicar OpenAPI" },
                     completada: { type: "boolean", description: "Indica si la tarea está completada o no", example: false },
                 },
@@ -61,8 +61,8 @@ module.exports = {
                 name: "id",
                 in: "path",
                 required: true,
-                description: "Identificador único de la tarea",
-                schema: { type: "integer", example: 1 },
+                description: "Identificador único de la tarea (MongoDB ObjectId)",
+                schema: { type: "string", example: "6640abc123456789def01234" },
             },
         },
     },
